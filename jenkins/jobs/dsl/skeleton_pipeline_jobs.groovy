@@ -74,7 +74,8 @@ validateAPIJob.with{
   //triggers scmProvider.trigger(projectScmNamespace, apiGitRepo, "master")
   steps {
     shell('''## YOUR BUILD STEPS GO HERE'''.stripMargin())
-    nodejs(nodeJSInstallationName: 'NodeJS 10.9.0') {
+    
+    nodejs(nodeJSInstallationName: 'NodeJS 10.9.0', configId: null) {
         sh 'npm config ls'
     }
     //nodejsCommand('console.log("Hello World!")', 'NodeJS 10.9.0')
