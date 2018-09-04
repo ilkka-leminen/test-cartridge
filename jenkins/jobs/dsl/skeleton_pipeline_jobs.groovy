@@ -56,7 +56,7 @@ validateAPIJob.with{
   }
   label("docker")
   wrappers {
-    nodejs('NodeJS 8.11.3')
+    nodejs('NodeJS 10.9.0')
     preBuildCleanup()
     injectPasswords()
     maskPasswords()
@@ -74,7 +74,7 @@ validateAPIJob.with{
   //triggers scmProvider.trigger(projectScmNamespace, apiGitRepo, "master")
   steps {
     shell('''## YOUR BUILD STEPS GO HERE'''.stripMargin())
-    nodejsCommand('console.log("Hello World!")', 'Node 8.11.3')
+    nodejsCommand('console.log("Hello World!")', 'NodeJS 10.9.0')
   }
   publishers{
   }
