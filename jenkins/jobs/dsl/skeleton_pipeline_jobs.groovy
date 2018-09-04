@@ -1,5 +1,5 @@
 
-//import pluggable.scm.*;
+import pluggable.scm.*;
 
 //SCMProvider scmProvider = SCMProviderHandler.getScmProvider("${SCM_PROVIDER_ID}", binding.variables)
 
@@ -10,7 +10,7 @@ def projectScmNamespace = "DEMO"
 
 // Variables
 // **The git repo variables will be changed to the users' git repositories manually in the Jenkins jobs**
-def apiGitRepo = "ssh://myurl"
+def demoGitRepo = "https://github.com/contentful/the-example-app.nodejs.git"
 //def apiRepo = "api"
 //def regressionTestGitRepo = "YOUR_REGRESSION_TEST_REPO"
 
@@ -64,10 +64,10 @@ validateAPIJob.with{
   scm {
         git {
             remote {
-                url(apiGitRepo)
-                credentials("adop-jenkins-master")
+                url(demoGitRepo)
+                //credentials("adop-jenkins-master")
             }
-            branch("*/master")
+            branch("master")
         }
     }
   //triggers scmProvider.trigger(projectScmNamespace, apiGitRepo, "master")
